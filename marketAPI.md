@@ -35,12 +35,18 @@
 对应状态判断条件：
 
 **拍卖中**：amount >0 && auctionType =2 &&  owner=market && runtime <deadline
+
 **出售中**：amount >0 && auctionType =1 && owner=market && runtime <deadline
+
 **未上架**：amount >0 && owner != market  
+
 **未领取**：amount >0 && runtime > deadline && owner=market && bidAccount >0
+
 已过期：amount >0 && runtime >deadline && owner=market && bidAccount==0   （该状态未列在筛选条件）
 
-Reponse
+
+
+**Reponse**
 
 ```
 {
