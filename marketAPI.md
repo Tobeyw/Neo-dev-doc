@@ -225,7 +225,7 @@ Reponse
 
 <!--当auctionAmount和auctionAsset值为空时，则为普通账户之间转账-->
 
-Response
+**Response**
 
 ```
 {
@@ -301,6 +301,8 @@ Response
 ## 6.GetNFTByContractHashTokenId(ContractHash,TokenIds)
 
 通过ContractHash 和Tokenid 获取指定NFT的信息
+
+**Request**
 
 ```
 {
