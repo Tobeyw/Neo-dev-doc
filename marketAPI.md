@@ -2,7 +2,7 @@
 
 
 
-#### 1.GetNftMarket(ContractHash,AssetHash,NFTState,Limit,Skip)
+## 1.GetNftMarket(ContractHash,AssetHash,NFTState,Limit,Skip)
 
 **NftState**:  auction    sale    notlisted   unclaimed,
 
@@ -42,7 +42,7 @@
 
 
 
-####  2. GetNFTOwnedByAddress(Address,Limit,Skip)
+##  2. GetNFTOwnedByAddress(Address,Limit,Skip)
 
 获取用户所有的nft列表,以及Nft状态
 
@@ -61,7 +61,7 @@
 }
 ```
 
-#### 3. GetNFTRecordByAddress(Address,MarketContractHash) 
+## 3. GetNFTRecordByAddress(Address,MarketContractHash) 
 
 获取用户对Nft所有操作事件信息
 
@@ -103,7 +103,7 @@
 } 
 ```
 
-#### 4.GetNFTRecordByContractHashTokenId(ContractHash,TokenId) 
+## 4.GetNFTRecordByContractHashTokenId(ContractHash,TokenId) 
 
 获取某个Nft在用户之间的历史记录
 
@@ -123,7 +123,7 @@
 
 <!--当auctionAmount和auctionAsset值为空时，则为普通账户之间转账-->
 
-#### 5.GetBidInfoByNFT(AssetHash,TokenId)
+## 5.GetBidInfoByNFT(AssetHash,TokenId)
 
 获取NFT所有出价记录信息
 
@@ -143,7 +143,7 @@
 }
 ```
 
-#### 6.GetNFTByContractHashTokenId(ContractHash,TokenIds)
+## 6.GetNFTByContractHashTokenId(ContractHash,TokenIds)
 
 通过ContractHash 和Tokenid 获取指定NFT的信息
 
@@ -162,7 +162,7 @@
 
 <!--tokenids为空时，则获取所有-->
 
-#### 7.GetAllBidInfoByNFT(AssetHash,TokenId)
+## 7.GetAllBidInfoByNFT(AssetHash,TokenId)
 
 获取指定NFT所有历史竞价信息记录
 
