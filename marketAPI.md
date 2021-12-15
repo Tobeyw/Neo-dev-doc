@@ -40,6 +40,41 @@
 **未领取**：amount >0 && runtime > deadline && owner=market && bidAccount >0
 已过期：amount >0 && runtime >deadline && owner=market && bidAccount==0   （该状态未列在筛选条件）
 
+Reponse
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "_id": "61b722130b1347a931f4ca19",
+                "amount": "1",
+                "asset": "0xc7b11b46f97bda7a8c82793841abba120e96695b",
+                "auctionAmount": "10",
+                "auctionAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                "auctionType": 2,
+                "auctor": "0xf0a33d62f32528c25e68951286f238ad24e30032",
+                "bidAmount": "20",
+                "bidder": "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+                "deadline": 1639566850621,
+                "image": "",
+                "market": "0xf63cccfe6cfac7ee776dada552b976c74fe5b51a",
+                "name": "sell-1",
+                "owner": "0xf63cccfe6cfac7ee776dada552b976c74fe5b51a",
+                "state": "auction",
+                "timestamp": 1639466059477,
+                "tokenid": "b7mzAd/hhpBYX95Gq8eJwkoZdS9JssMHHhJztAQNCKs="
+            },
+            ....
+            
+        ],
+        "totalCount": 2
+    },
+    "error": null
+}
+```
+
 
 
 ##  2. GetNFTOwnedByAddress(Address,Limit,Skip)
@@ -60,6 +95,41 @@
   "id": 1
 }
 ```
+
+**Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "_id": "61b7254d79025710198f0e5b",
+                "amount": "0",
+                "asset": "0xc7b11b46f97bda7a8c82793841abba120e96695b",
+                "auctionAmount": "0",
+                "auctionAsset": null,
+                "auctionType": 0,
+                "auctor": null,
+                "bidAmount": "0",
+                "bidder": null,
+                "deadline": 0,
+                "image": "",
+                "market": null,
+                "name": "sell-1",
+                "owner": "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+                "state": "",
+                "timestamp": 1639393728600,
+                "tokenid": "b7mzAd/hhpBYX95Gq8eJwkoZdS9JssMHHhJztAQNCKs="
+            }
+        ],
+        "totalCount": 1
+    },
+    "error": null
+}
+```
+
+
 
 ## 3. GetNFTRecordByAddress(Address,MarketContractHash) 
 
@@ -103,6 +173,38 @@
 } 
 ```
 
+**Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "asset": "0xc7b11b46f97bda7a8c82793841abba120e96695b",
+                "auctionAmount": 10,
+                "auctionAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                "event": "Claim",
+                "from": "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+                "image": "",
+                "name": "sell-1",
+                "nonce": 5,
+                "state": "sell_sold",
+                "timestamp": 1639392588921,
+                "to": "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+                "tokenid": "b7mzAd/hhpBYX95Gq8eJwkoZdS9JssMHHhJztAQNCKs=",
+                "user": "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e"
+            },
+            .....
+        ],
+        "totalCount": 7
+    },
+    "error": null
+}
+```
+
+
+
 ## 4.GetNFTRecordByContractHashTokenId(ContractHash,TokenId) 
 
 获取某个Nft在用户之间的历史记录
@@ -122,6 +224,34 @@
 ```
 
 <!--当auctionAmount和auctionAsset值为空时，则为普通账户之间转账-->
+
+Response
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "asset": "0xc7b11b46f97bda7a8c82793841abba120e96695b",
+                "auctionAmount": 100,
+                "auctionAsset": "0x0daba9cbfa59cf4d43ff1b76d3691725da278450",
+                "from": "0xf63cccfe6cfac7ee776dada552b976c74fe5b51a",
+                "image": "",
+                "name": "1",
+                "timestamp": 1639380705777,
+                "to": "0x78fed05e0ed095b47826bd7461da11c8281195f6",
+                "tokenid": "BoN2dx2fSFeRuT7kp87u3e1Jewc3ZIqQ5U0dQSdxofA="
+            },
+            ......
+        ],
+        "totalCount": 7
+    },
+    "error": null
+}
+```
+
+
 
 ## 5.GetBidInfoByNFT(AssetHash,TokenId)
 
@@ -143,6 +273,31 @@
 }
 ```
 
+**Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "asset": "0xc7b11b46f97bda7a8c82793841abba120e96695b",
+                "auctionAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                "bidAmount": "20",
+                "bidder": "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+                "timestamp": 1639393572133,
+                "tokenid": "az2dNYa7xEzk2XAQoHnH22k6AbO5/RkyqMDK64VuuXE="
+            },
+           ......
+        ],
+        "totalCount": 3
+    },
+    "error": null
+}
+```
+
+
+
 ## 6.GetNFTByContractHashTokenId(ContractHash,TokenIds)
 
 通过ContractHash 和Tokenid 获取指定NFT的信息
@@ -162,6 +317,39 @@
 
 <!--tokenids为空时，则获取所有-->
 
+**Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "_id": "61b724ab0b1347a931f4cae2",
+                "amount": "1",
+                "asset": "0xc7b11b46f97bda7a8c82793841abba120e96695b",
+                "auctionAmount": "10",
+                "auctionAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                "auctionType": 2,
+                "auctor": "0xc65e19cfa66b61800ce582d1b55f4e93fa214b17",
+                "bidAmount": "20",
+                "bidder": "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+                "deadline": 1639565840451,
+                "market": "0xf63cccfe6cfac7ee776dada552b976c74fe5b51a",
+                "owner": "0xf63cccfe6cfac7ee776dada552b976c74fe5b51a",
+                "state": "auction",
+                "timestamp": 1639393572133,
+                "tokenid": "az2dNYa7xEzk2XAQoHnH22k6AbO5/RkyqMDK64VuuXE="
+            }
+        ],
+        "totalCount": 1
+    },
+    "error": null
+}
+```
+
+
+
 ## 7.GetAllBidInfoByNFT(AssetHash,TokenId)
 
 获取指定NFT所有历史竞价信息记录
@@ -177,6 +365,35 @@
       "TokenId":"b7mzAd/hhpBYX95Gq8eJwkoZdS9JssMHHhJztAQNCKs="  
   },
   "id": 1
+}
+```
+
+**Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "asset": "0xc7b11b46f97bda7a8c82793841abba120e96695b",
+                "bidAmount": [
+                    20,
+                    15,
+                    10
+                ],
+                "bidder": [
+                    "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+                    "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+                    "0xf0a33d62f32528c25e68951286f238ad24e30032"
+                ],
+                "nonce": 9,
+                "tokenid": "b7mzAd/hhpBYX95Gq8eJwkoZdS9JssMHHhJztAQNCKs="
+            }
+        ],
+        "totalCount": 1
+    },
+    "error": null
 }
 ```
 
