@@ -137,7 +137,7 @@
 
 
 
-## 3. GetNFTRecordByAddress(Address,MarketContractHash) 
+## 3. GetNFTRecordByAddress(Address,MarketContractHash,Limit,Skip) 
 
 获取用户对Nft所有操作事件信息
 
