@@ -2,7 +2,7 @@
 
 
 
-## 1.GetNftMarket(ContractHash,AssetHash,NFTState,Limit,Skip)
+## 1.GetNftMarket(ContractHash,AssetHash,NFTState)
 
 **NftState**:  auction    sale    notlisted   unclaimed,
 
@@ -137,7 +137,7 @@
 
 
 
-## 3. GetNFTRecordByAddress(Address,MarketContractHash,Limit,Skip) 
+## 3. GetNFTRecordByAddress(Address,MarketContractHash) 
 
 获取用户对Nft所有操作事件信息
 
