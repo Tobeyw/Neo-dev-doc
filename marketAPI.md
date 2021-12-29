@@ -4,7 +4,7 @@
 
 ## 1.GetNftMarket(ContractHash,AssetHash,NFTState)
 
-**NftState**:  auction    sale    notlisted   unclaimed,
+**NftState**:  auction    sale    notlisted  
 
 **Sort** :  timestamp    price     
 
@@ -39,12 +39,6 @@
 **出售中**：amount >0 && auctionType =1 && owner=market && runtime <deadline
 
 **未上架**：amount >0 && owner != market  
-
-**未领取**：amount >0 && runtime > deadline && owner=market && bidAccount >0
-
-已过期：amount >0 && runtime >deadline && owner=market && bidAccount==0   （该状态未列在筛选条件）
-
-
 
 **Reponse**
 
@@ -87,16 +81,40 @@
 
 获取用户所有的nft列表,以及Nft状态
 
+**NftState**: auction sale notlisted unclaimed,
+
+**Sort** : timestamp price
+
+**Order**：-1:降序 +1：升序
+
+按照合约分类ContractHash、币种(AssetHash)、NFT状态(NFTState)，获取NFT列表
+
+对应状态判断条件：
+
+**拍卖中**：amount >0 && auctionType =2 && owner=market && runtime <deadline
+
+**出售中**：amount >0 && auctionType =1 && owner=market && runtime <deadline
+
+**未上架**：amount >0 && owner != market
+
+**未领取**：amount >0 && runtime > deadline && owner=market 
+
 **Request**
 
 ```
 {
   "jsonrpc": "2.0",
   "method": "GetNFTOwnedByAddress",
-  "params": {    
-      "Address":"0x78fed05e0ed095b47826bd7461da11c8281195f6",     
+  "params": {
+      "Address":"0xdd58b7a05fd9b58a6ec36d6401a89ff2cda224a2", //(必填字段)
+      "ContractHash":"0xc7b11b46f97bda7a8c82793841abba120e96695b",
+      "AssetHash":"",
+      "NFTstate":"notlisted",
+      "Sort":"",
+      "Order":1,       
       "Skip":0,
-      "Limit":4     
+      "Limit":10
+     
        },
   "id": 1
 }
