@@ -77,7 +77,7 @@
 
 
 
-##  2. GetNFTOwnedByAddress(Address,Limit,Skip)
+##  2. GetNFTOwnedByAddress(Address,ContractHash，AssetHash,NFTstate,Sort,Order,Limit,Skip)
 
 获取用户所有的nft列表,以及Nft状态
 
