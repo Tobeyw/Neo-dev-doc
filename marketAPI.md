@@ -162,7 +162,7 @@
 事件信息汇总：
 
 ```
-     Cancel T = "cancel" //卖家下架
+	Cancel T = "cancel" //卖家下架
 	//直买直卖
 	Sell_Listed  T = "sell_listed"  //卖家上架
 	Sell_Expired T = "sell_expired" //卖家上架过期
