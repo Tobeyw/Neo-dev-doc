@@ -423,3 +423,44 @@
 }
 ```
 
+## 8.GetNFTClass(AssetHash,SubClass)
+
+获取一级市场的分类
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetNFTClass",
+  "params": {  
+      "AssetHash":"0xc7b11b46f97bda7a8c82793841abba120e96695b",      
+      "SubClass":[["VbdQL2cl8ngkJjITK8aNzeY07PLKiEyiXCORcgw+lfI=","sNU/EpLlV1GuiH4P0zet1rz+SlCb1/2YNucEanpVWIA="],["79WdS6cDK2ZC74UPFlILgiZlus49WkhYo5z8XpR+ckg=","GSDIwJTkjsqbWMQG4eAkPkzCXrTv/390QciVb/B3cow="]]   
+      },
+  "id": 1
+}
+```
+
+**Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "asset": "0xc7b11b46f97bda7a8c82793841abba120e96695b",
+                "claimed": 6,
+                "image": "",
+                "name": "sell-1",
+                "price": "5",
+                "sellAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf"
+            },
+            ....
+        ],
+        "totalCount": 2
+    },
+    "error": null
+}
+```
+
