@@ -22,6 +22,7 @@
       "ContractHash":"",
       "AssetHash":"",
       "NFTstate":"auction",
+      "MarketHash":"",//市场合约hash
       "Sort":"",
       "Order":1,       
       "Skip":0,
@@ -77,7 +78,7 @@
 
 
 
-##  2. GetNFTOwnedByAddress(Address,ContractHash，AssetHash,NFTstate,Sort,Order,Limit,Skip)
+##  2. GetNFTOwnedByAddress(Address,ContractHash，AssetHash,NFTstate,MarketHash,Sort,Order,Limit,Skip)
 
 获取用户所有的nft列表,以及Nft状态
 
@@ -229,7 +230,7 @@
 
 
 
-## 4.GetNFTRecordByContractHashTokenId(ContractHash,TokenId) 
+## 4.GetNFTRecordByContractHashTokenId(ContractHash,TokenId,MarketHash) 
 
 获取某个Nft在用户之间的历史记录
 
@@ -241,7 +242,8 @@
   "method": "GetNFTRecordByContractHashTokenId",
   "params": {
       "ContractHash":"0xc7b11b46f97bda7a8c82793841abba120e96695b",   
-      "TokenId":"BoN2dx2fSFeRuT7kp87u3e1Jewc3ZIqQ5U0dQSdxofA="  
+      "TokenId":"BoN2dx2fSFeRuT7kp87u3e1Jewc3ZIqQ5U0dQSdxofA=",
+      "MarketHash":""
   },
   "id": 1
 }
@@ -277,7 +279,7 @@
 
 
 
-## 5.GetBidInfoByNFT(AssetHash,TokenId)
+## 5.GetBidInfoByNFT(Address,AssetHash,TokenId,MarketHash)
 
 获取NFT所有出价记录信息
 
@@ -290,7 +292,8 @@
   "params": {
       "Address":"",
       "AssetHash": "0xc7b11b46f97bda7a8c82793841abba120e96695b",
-      "TokenId":"az2dNYa7xEzk2XAQoHnH22k6AbO5/RkyqMDK64VuuXE="                      
+      "TokenId":"az2dNYa7xEzk2XAQoHnH22k6AbO5/RkyqMDK64VuuXE=",
+      "MarketHash":""
   
   },
   "id": 1
@@ -322,7 +325,7 @@
 
 
 
-## 6.GetNFTByContractHashTokenId(ContractHash,TokenIds)
+## 6.GetNFTByContractHashTokenId(ContractHash,TokenIds,MarketHash)
 
 通过ContractHash 和Tokenid 获取指定NFT的信息
 
@@ -334,7 +337,9 @@
   "method": "GetNFTByContractHashTokenId",
   "params": {
       "ContractHash":"0xc7b11b46f97bda7a8c82793841abba120e96695b",     
-      "TokenIds":["LzKk2aeLybZTv83Hzw8djcvJJyVldIyi8oly1qqmqUo="]
+      "TokenIds":["LzKk2aeLybZTv83Hzw8djcvJJyVldIyi8oly1qqmqUo="],
+      "MarketHash":""
+      
       },
   "id": 1
 }
@@ -376,7 +381,7 @@
 
 
 
-## 7.GetAllBidInfoByNFT(AssetHash,TokenId)
+## 7.GetAllBidInfoByNFT(AssetHash,TokenId,MarketHash)
 
 获取指定NFT所有历史竞价信息记录
 
@@ -388,7 +393,8 @@
   "method": "GetAllBidInfoByNFT",
   "params": {      
       "AssetHash": "0xc7b11b46f97bda7a8c82793841abba120e96695b",
-      "TokenId":"b7mzAd/hhpBYX95Gq8eJwkoZdS9JssMHHhJztAQNCKs="  
+      "TokenId":"b7mzAd/hhpBYX95Gq8eJwkoZdS9JssMHHhJztAQNCKs=",
+      "MarketHash":""
   },
   "id": 1
 }
@@ -435,7 +441,8 @@
   "method": "GetNFTClass",
   "params": {  
       "AssetHash":"0xc7b11b46f97bda7a8c82793841abba120e96695b",      
-      "SubClass":[["VbdQL2cl8ngkJjITK8aNzeY07PLKiEyiXCORcgw+lfI=","sNU/EpLlV1GuiH4P0zet1rz+SlCb1/2YNucEanpVWIA="],["79WdS6cDK2ZC74UPFlILgiZlus49WkhYo5z8XpR+ckg=","GSDIwJTkjsqbWMQG4eAkPkzCXrTv/390QciVb/B3cow="]]   
+      "SubClass":[["VbdQL2cl8ngkJjITK8aNzeY07PLKiEyiXCORcgw+lfI=","sNU/EpLlV1GuiH4P0zet1rz+SlCb1/2YNucEanpVWIA="], ["79WdS6cDK2ZC74UPFlILgiZlus49WkhYo5z8XpR+ckg=","GSDIwJTkjsqbWMQG4eAkPkzCXrTv/390QciVb/B3cow="]],
+      "MarketHash":"0xf63cccfe6cfac7ee776dada552b976c74fe5b51a"  //必填
       },
   "id": 1
 }
@@ -450,11 +457,11 @@
         "result": [
             {
                 "asset": "0xc7b11b46f97bda7a8c82793841abba120e96695b",
-                "claimed": 6,
+                "claimed": 6,  //已经卖掉的数量
                 "image": "",
                 "name": "sell-1",
-                "price": "5",
-                "sellAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf"
+                "price": "5",   //售卖价格
+                "sellAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf"  //售卖资产
             },
             ....
         ],
