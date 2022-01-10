@@ -192,7 +192,7 @@
   "method": "GetNFTRecordByAddress",
   "params": {
       "Address":"0xf0a33d62f32528c25e68951286f238ad24e30032",
-      "MarketContractHash": "0xdd58b7a05fd9b58a6ec36d6401a89ff2cda224a2"    
+      "MarketHash": "0xdd58b7a05fd9b58a6ec36d6401a89ff2cda224a2"    
   },
   "id": 1
 } 
