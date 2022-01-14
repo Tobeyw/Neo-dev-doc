@@ -478,7 +478,7 @@
 }
 ```
 
-## 8.GetMarketIndexByAsset(MarketHash，AssetHash)
+## 9.GetMarketIndexByAsset(MarketHash，AssetHash)
 
 获取二级市场某一系列的指标
 
