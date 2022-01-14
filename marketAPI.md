@@ -6,7 +6,7 @@
 
 **NftState**:  auction    sale    notlisted  
 
-**Sort** :  timestamp    price     
+**Sort** :  timestamp (上架时间)   price（上架价格）    deadline（截止时间）
 
 **Order**：-1:降序  +1：升序
 
@@ -433,6 +433,12 @@
 
 获取一级市场的分类
 
+**State:**  mint  : NFT  mint出来但未上架
+
+​            listed  : NFT  上架但未开售
+
+​           selling : NFT  售卖中
+
 **Request**
 
 ```
@@ -443,6 +449,7 @@
       "AssetHash":"0xc7b11b46f97bda7a8c82793841abba120e96695b",      
       "SubClass":[["VbdQL2cl8ngkJjITK8aNzeY07PLKiEyiXCORcgw+lfI=","sNU/EpLlV1GuiH4P0zet1rz+SlCb1/2YNucEanpVWIA="], ["79WdS6cDK2ZC74UPFlILgiZlus49WkhYo5z8XpR+ckg=","GSDIwJTkjsqbWMQG4eAkPkzCXrTv/390QciVb/B3cow="]],
       "MarketHash":"0xf63cccfe6cfac7ee776dada552b976c74fe5b51a"  //必填
+      "State":"listed" //必填
       },
   "id": 1
 }
@@ -466,6 +473,42 @@
             ....
         ],
         "totalCount": 2
+    },
+    "error": null
+}
+```
+
+## 8.GetMarketIndexByAsset(MarketHash，AssetHash)
+
+获取二级市场某一系列的指标
+
+Request
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetMarketIndexByAsset",
+  "params": {     
+      "MarketHash":"0xf63cccfe6cfac7ee776dada552b976c74fe5b51a",
+      "AssetHash":"0xc7b11b46f97bda7a8c82793841abba120e96695b"
+      },      
+  "id": 1
+}
+```
+
+Response
+
+```
+
+{
+    "id": 1,
+    "result": {
+        "auctionAmount":  "5",   //地板价价格   nep17
+        "auctionAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+        "conAmount": 3.2919624466782094,    //地板价价格     usd  
+        "totalowner": 6,   //owner总量
+        "totalsupply": 28, // NFT系列总量
+        "totaltxamount":277.03192125227014   // 交易总额  usd
     },
     "error": null
 }
