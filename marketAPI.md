@@ -22,7 +22,8 @@
       "ContractHash":"",
       "AssetHash":"",
       "NFTstate":"auction",
-      "MarketHash":"",//市场合约hash
+      "SecondaryMarket":"",
+      "PrimaryMarket":"0xf63cccfe6cfac7ee776dada552b976c74fe5b51a",
       "Sort":"",
       "Order":1,       
       "Skip":0,
@@ -448,8 +449,7 @@
   "params": {  
       "AssetHash":"0xc7b11b46f97bda7a8c82793841abba120e96695b",      
       "SubClass":[["VbdQL2cl8ngkJjITK8aNzeY07PLKiEyiXCORcgw+lfI=","sNU/EpLlV1GuiH4P0zet1rz+SlCb1/2YNucEanpVWIA="], ["79WdS6cDK2ZC74UPFlILgiZlus49WkhYo5z8XpR+ckg=","GSDIwJTkjsqbWMQG4eAkPkzCXrTv/390QciVb/B3cow="]],
-      "MarketHash":"0xf63cccfe6cfac7ee776dada552b976c74fe5b51a"  //必填
-      "State":"listed" //必填
+      "MarketHash":"0xf63cccfe6cfac7ee776dada552b976c74fe5b51a"  //必填      
       },
   "id": 1
 }
