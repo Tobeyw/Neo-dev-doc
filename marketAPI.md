@@ -18,16 +18,16 @@
 {
   "jsonrpc": "2.0",
   "method": "GetNFTMarket",
-  "params": {
+  "params": {     
       "ContractHash":"",
       "AssetHash":"",
-      "NFTstate":"auction",
-      "SecondaryMarket":"",
-      "PrimaryMarket":"0xf63cccfe6cfac7ee776dada552b976c74fe5b51a",
+      "SecondaryMarket":"0x1f594c26a50d25d22d8afc3f1843b4ddb17cf180",
+	  "PrimaryMarket":"0x1ba667322022693c8629d87b804f5d7730d10779",
+      "NFTstate":"",
       "Sort":"",
-      "Order":1,       
+      "Order":-1,        
       "Skip":0,
-      "Limit":4
+      "Limit":20
      
        },
   "id": 1
