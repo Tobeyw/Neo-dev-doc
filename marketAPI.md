@@ -111,6 +111,7 @@
       "Address":"0xdd58b7a05fd9b58a6ec36d6401a89ff2cda224a2", //(必填字段)
       "ContractHash":"0xc7b11b46f97bda7a8c82793841abba120e96695b",
       "AssetHash":"",
+     " MarketHash":"0x1f594c26a50d25d22d8afc3f1843b4ddb17cf180",
       "NFTstate":"notlisted",
       "Sort":"",
       "Order":1,       
