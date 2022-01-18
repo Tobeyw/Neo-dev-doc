@@ -1014,3 +1014,34 @@
 }
 ```
 
+## 11.GetMarketWhiteList(MarketHash)
+
+Request
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetMarketWhiteList",
+  "params": {
+      "MarketHash":"0x1f594c26a50d25d22d8afc3f1843b4ddb17cf180"     
+       },
+  "id": 1
+}
+```
+
+Response
+
+```
+{
+    "id": 1,
+    "result": {
+        "market": "0x0b92cf1c2f308d8084085dc446f7c033b753e959",
+        "whiteList": [
+            "0x48c40d4666f93408be1bef038b6722404d9a4c2a",
+            "0x0e35991d4eaeea0ff35b4a849342d59c8091de18"
+        ]
+    },
+    "error": null
+}
+```
+
