@@ -1090,3 +1090,63 @@ Response
 }
 ```
 
+## 13.GetNFTByWords(Words）
+
+通过关键词模糊搜索
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetNFTByWords",
+  "params": {
+      "Words":"Fragment"    
+       },
+  "id": 1
+}
+```
+
+**Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "_id": "61d7f34d0506da8998fb33a8",
+                "asset": "0xb3b65e5c0d2af3f98cac6e80083f6c2b90476f40",
+                "image": "",
+                "market": [
+                    {
+                        "_id": "61d7f34d0506da8998fb3382",
+                        "amount": "1",
+                        "asset": "0xb3b65e5c0d2af3f98cac6e80083f6c2b90476f40",
+                        "auctionAmount": "0",
+                        "auctionAsset": null,
+                        "auctionType": 0,
+                        "auctor": null,
+                        "bidAmount": "0",
+                        "bidder": null,
+                        "deadline": 0,
+                        "market": null,
+                        "owner": "0x1b8515876a42de583dcb6ed10d09b2f0ace498c0",
+                        "state": "notlisted",
+                        "timestamp": 1627355645720,
+                        "tokenid": "RnJhZ21lbnQgQiAxMDAw"
+                    }
+                ],
+                "name": "Fragment B 1000",
+                "number": -1,
+                "properties": {},
+                "tokenid": "RnJhZ21lbnQgQiAxMDAw"
+            },
+            ......
+            ],
+        "totalCount": 1485
+    },
+    "error": null
+}
+```
+
