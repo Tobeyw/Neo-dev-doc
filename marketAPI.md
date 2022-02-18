@@ -1152,7 +1152,7 @@ Response
 }
 ```
 
-14.GetNFSImgStatus(Url）
+## 14.GetNFSImgStatus(Url）
 
 获取图片的状态
 
