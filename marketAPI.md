@@ -1152,3 +1152,30 @@ Response
 }
 ```
 
+14.GetNFSImgStatus(Url）
+
+获取图片的状态
+
+Request
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetNFSImgStatus",
+  "params": {"Url":"https://http.testnet.fs.neo.org/C1UKxuvGNNjEHgtGi3YAFSthsfTC9zxJtBh8eXhCmMoi/9cWgnZe75d8X1jhbkYVSVa7ZkmDT5KkeQiiCNwjfJtxC2"},
+  "id": 1
+}
+```
+
+Response
+
+```
+{
+    "id": 1,
+    "result": {
+        "ImageStatus": false
+    },
+    "error": null
+}
+```
+
