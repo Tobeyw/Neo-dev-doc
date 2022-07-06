@@ -1179,3 +1179,113 @@ Response
 }
 ```
 
+
+
+## 15.GetOffersByAddress(Address,OfferState）
+
+根据地址获取offer列表
+
+**OfferState**:     (默认所有)
+
+-  valid   （按时间排序）
+- received（按offerAmount 排序）
+
+**Request**
+
+```
+{  
+    "jsonrpc": "2.0",
+    "method": "GetOffersByAddress",
+    "params": {
+        "Address":"0xa4d82bd69da0fd3e0440fd94a2c0fa10b4f26a3a",        
+        "OfferState":"received",   
+        "Limit":50,  
+        "Skip":0
+        },
+    "id": 1
+}
+```
+
+**Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "_id": "62c51eaab77e14d7e360637f",
+                "asset": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+                "blockhash": "0x14d9c0fa8b63311114e116b200d57551eb050b4eaf33329c06e152127d267213",
+                "deadline": 1657172010331,
+                "eventname": "Offer",
+                "market": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+                "nonce": 17,
+                "offerAmount": 200000000,
+                "offerAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                "originOwner": "0xa4d82bd69da0fd3e0440fd94a2c0fa10b4f26a3a",
+                "timestamp": 1657085610331,
+                "tokenid": "TWV0YVBhbmFjZWEgIzIwLTAx",
+                "txid": "0x591195ddcfeef6c8aa593561a14f691e5e8add1299e964e64a3fa4e50074f316",
+                "user": "0xa4d82bd69da0fd3e0440fd94a2c0fa10b4f26a3a"
+            },
+           .......
+        ],
+        "totalCount": 2
+    },
+    "error": null
+}
+```
+
+## 16.GetOffersByNFT(Asset,TokenId,MarketHash）
+
+根据NFT获取offer列表
+
+**Request**
+
+```
+{  
+    "jsonrpc": "2.0",
+    "method": "GetOffersByNFT",
+    "params": {
+        "Asset":"0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",        
+        "TokenId":"TWV0YVBhbmFjZWEgIzIwLTAx",
+        "MarketHash":"0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+        "Limit":50,  
+        "Skip":0
+        },
+    "id": 1
+}
+```
+
+**Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "_id": "62c51eaab77e14d7e360637f",
+                "asset": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+                "blockhash": "0x14d9c0fa8b63311114e116b200d57551eb050b4eaf33329c06e152127d267213",
+                "deadline": "1657172010331",
+                "eventname": "Offer",
+                "market": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+                "nonce": 17,
+                "offerAmount": "200000000",
+                "offerAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                "originOwner": "0xa4d82bd69da0fd3e0440fd94a2c0fa10b4f26a3a",
+                "timestamp": 1657085610331,
+                "tokenid": "TWV0YVBhbmFjZWEgIzIwLTAx",
+                "txid": "0x591195ddcfeef6c8aa593561a14f691e5e8add1299e964e64a3fa4e50074f316",
+                "user": "0xa4d82bd69da0fd3e0440fd94a2c0fa10b4f26a3a"
+            },
+           ......
+        ],
+        "totalCount": 16
+    },
+    "error": null
+}
+```
+
