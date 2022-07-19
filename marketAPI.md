@@ -1291,7 +1291,7 @@ Response
 
 ## 17.GetHighestOfferByNFT(Asset,TokenId,MarketHash）
 
-根据NFT获取offer列表
+根据NFT获取最高出价有效offer
 
 **Request**
 
