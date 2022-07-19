@@ -1289,3 +1289,42 @@ Response
 }
 ```
 
+## 17.GetHighestOfferByNFT(Asset,TokenId,MarketHash）
+
+根据NFT获取offer列表
+
+**Request**
+
+```
+{  
+    "jsonrpc": "2.0",
+    "method": "GetHighestOfferByNFT",
+    "params": {
+        "Asset":"0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",        
+        "TokenId":"TWV0YVBhbmFjZWEgIzE5LTAx",
+        "MarketHash":"0xc198d687cc67e244662c3b9c1325f095f8e663b1"
+        },
+    "id": 1
+}
+```
+
+**Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "asset": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+        "deadline": 1660465743694,
+        "guarantee": 2000000000,
+        "offerAmount": 3001000000,
+        "offerAsset": "0x85deac50febfd93988d3f391dea54e8289e43e9e",
+        "originOwner": "0xf0a33d62f32528c25e68951286f238ad24e30032",
+        "tokenid": "TWV0YVBhbmFjZWEgIzE5LTAx",
+        "usdAmount": 1,
+        "user": "0xfa03cb7b40072c69ca41f0ad3606a548f1d59966"
+    },
+    "error": null
+}
+```
+
