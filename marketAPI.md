@@ -1328,3 +1328,48 @@ Response
 }
 ```
 
+## 18.GetHighestOfferByNFTList(NFT,MarketHash）
+
+根据NFT获取最高出价有效offer
+
+**Request**
+
+```
+{  
+    "jsonrpc": "2.0",
+    "method": "GetHighestOfferByNFTList",
+    "params": {            
+        "NFT":[
+            { "Asset":"0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56","TokenId":"TWV0YVBhbmFjZWEgIzIwLTAx"},
+            { "Asset":"0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56","TokenId":"TWV0YVBhbmFjZWEgIzAtMDE="},
+            { "Asset":"0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56","TokenId":"TWV0YVBhbmFjZWEgIzI2LTAz"}
+        ],
+        "MarketHash":"0xc198d687cc67e244662c3b9c1325f095f8e663b1"
+        },
+    "id": 1
+}
+```
+
+**Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56TWV0YVBhbmFjZWEgIzAtMDE=": {
+            "asset": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+            "deadline": 1658300654171,
+            "guarantee": 4912000000,
+            "offerAmount": 400000000,
+            "offerAsset": "0x85deac50febfd93988d3f391dea54e8289e43e9e",
+            "originOwner": "0x58456204c30be1bb479b301046c3932712c676bc",
+            "tokenid": "TWV0YVBhbmFjZWEgIzAtMDE=",
+            "usdAmount": 1,
+            "user": "0xfa03cb7b40072c69ca41f0ad3606a548f1d59966"
+        },
+        "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56TWV0YVBhbmFjZWEgIzIwLTAx": {}
+    },
+    "error": null
+}
+```
+
