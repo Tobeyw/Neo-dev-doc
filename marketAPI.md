@@ -1373,9 +1373,15 @@ Response
 }
 ```
 
-## 19.GetNFTActivityByAsset(Asset,Market,Sort）
+## 19.GetNFTActivityByAsset(Asset,Market,State）
 
 根据系列获取不同状态事件历史记录
+
+State: offers  
+
+​            sales  
+
+​           listings
 
 **Request**
 
