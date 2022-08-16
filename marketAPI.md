@@ -1373,3 +1373,54 @@ Response
 }
 ```
 
+## 19.GetNFTActivityByAsset(Asset,Market,Sort）
+
+根据系列获取不同状态事件历史记录
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetNFTActivityByAsset",
+  "params": {
+      "Asset":"0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+      "Market":"0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+      "State":"offers",
+      "Limit": 6,
+      "Skip":0
+      },
+  "id": 1
+}
+```
+
+**Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "asset": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+                "auctionAmount": "100000000",
+                "auctionAsset": "0x85deac50febfd93988d3f391dea54e8289e43e9e",
+                "event": "Offer",
+                "from": "0xf0a33d62f32528c25e68951286f238ad24e30032",
+                "image": "https://http.fs.neo.org/GD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKr/DTy3nj1wba3Nps8tQDjntKEVbNQjtsGB6DsLLZhfYZJc",
+                "market": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+                "name": "MetaPanacea #19",
+                "nonce": 204,
+                "state": "offer_expired",
+                "timestamp": 1660214173878,
+                "to": "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+                "tokenid": "TWV0YVBhbmFjZWEgIzE5LTAy"
+            },
+            ......
+        ],
+        "totalCount": 6
+    },
+    "error": null
+}
+```
+
