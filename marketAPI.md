@@ -479,7 +479,7 @@
 }
 ```
 
-## 9.GetMarketIndexByAsset(MarketHash，AssetHash)
+## 9.GetMarketIndexByAsset(AssetHash)
 
 获取二级市场某一系列的指标
 
@@ -490,7 +490,6 @@
   "jsonrpc": "2.0",
   "method": "GetMarketIndexByAsset",
   "params": {     
-      "MarketHash":"0xf63cccfe6cfac7ee776dada552b976c74fe5b51a",
       "AssetHash":"0xc7b11b46f97bda7a8c82793841abba120e96695b"
       },      
   "id": 1
@@ -1377,7 +1376,7 @@ Response
 
 根据系列获取不同状态事件历史记录
 
-State: offers  
+State: offers       
 
 ​            sales  
 
