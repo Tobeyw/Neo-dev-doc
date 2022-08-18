@@ -1429,3 +1429,43 @@ State: offers
 }
 ```
 
+## 20.GetMarketDayVolumeByAsset(AssetHash,LastDays）
+
+获取近任意天 的二级市场上的交易量
+
+ 
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetMarketDayVolumeByAsset",
+  "params": {      
+      "AssetHash":"0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+      "LastDays":7     
+       },
+  "id": 1
+}
+```
+
+**Response**
+
+```
+{
+    "id": 1,
+    "result": [
+        {
+            "_id": "62fe0b7d3c6294484cdab024",
+            "asset": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+            "avgPrice": "100000000",
+            "date": 1660176000000,
+            "dayAmount": 2,
+            "dayVolume": "200000000"
+        },
+       ......
+    ],
+    "error": null
+}
+```
+
