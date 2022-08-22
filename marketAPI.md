@@ -1469,3 +1469,151 @@ State: offers
 }
 ```
 
+## 21.GetMarketFloorPriceByAsset(AssetHash,Market）
+
+获取地板价订单
+
+ 
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetMarketFloorPriceByAsset",
+  "params": {    
+      "AssetHash":"0x6a2893f97401e2b58b757f59d71238d91339856a",
+      "Market":"0xc198d687cc67e244662c3b9c1325f095f8e663b1"
+       },
+  "id": 1
+}
+```
+
+**Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "_id": "62ff3496520d37da2b200860",
+        "amount": "1",
+        "asset": "0x6a2893f97401e2b58b757f59d71238d91339856a",
+        "auctionAmount": "100000000",
+        "auctionAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+        "auctionType": 1,
+        "auctor": "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+        "bidAmount": "0",
+        "bidder": null,
+        "deadline": 1661583509751,
+        "market": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+        "owner": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+        "timestamp": 1660892309751,
+        "tokenid": "QkxPQ0sgIzAx",
+        "usdAmount": "1"
+    },
+    "error": null
+}
+```
+
+## 22.GetMarketOrdersByPrice(AssetHash,MarketHash,Token,MinAmount,MaxAmount）
+
+给一个最小价格min，最大价格max。返回符合这个价格区间的所有订单。
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetMarketOrdersByPrice",
+  "params": {    
+      "AssetHash":"0x6a2893f97401e2b58b757f59d71238d91339856a",
+      "MarketHash":"0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+      "Token":"0xd2a4cff31913016155e38e474a2c06d08be276cf",
+      "MinAmount":100000000,
+      "MaxAmount":1200000000
+       },
+  "id": 1
+}
+```
+
+**Response**
+
+```
+{
+    "id": 1,
+    "result": [
+        {
+            "_id": "62ff3496520d37da2b200860",
+            "amount": "1",
+            "asset": "0x6a2893f97401e2b58b757f59d71238d91339856a",
+            "auctionAmount": "100000000",
+            "auctionAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+            "auctionType": 1,
+            "auctor": "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+            "bidAmount": "0",
+            "bidder": null,
+            "deadline": 1661583509751,
+            "market": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+            "owner": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+            "timestamp": 1660892309751,
+            "tokenAmount": "1e+08",
+            "tokenid": "QkxPQ0sgIzAx",
+            "usdAmount": "2.577495928670139"
+        },
+        .......
+   
+    ],
+    "error": null
+}
+```
+
+## 23.GetMarketCheapOrdersByAsset(AssetHash,MarketHash,Number）
+
+给一个数字X，返回地板价及地板价往上X个订单
+
+ 
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetMarketCheapOrdersByAsset",
+  "params": {    
+      "AssetHash":"0x6a2893f97401e2b58b757f59d71238d91339856a",
+      "MarketHash":"0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+      "Number":2
+       },
+  "id": 1
+}
+```
+
+**Response**
+
+```
+{
+    "id": 1,
+    "result": [
+        {
+            "_id": "62ff3496520d37da2b200860",
+            "amount": "1",
+            "asset": "0x6a2893f97401e2b58b757f59d71238d91339856a",
+            "auctionAmount": "100000000",
+            "auctionAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+            "auctionType": 1,
+            "auctor": "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+            "bidAmount": "0",
+            "bidder": null,
+            "deadline": 1661583509751,
+            "market": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+            "owner": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+            "timestamp": 1660892309751,
+            "tokenid": "QkxPQ0sgIzAx",
+            "usdAmount": "2.577495928670139"
+        },
+       .......
+    ],
+    "error": null
+}
+```
+
