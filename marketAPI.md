@@ -2002,72 +2002,42 @@ State: offers
                         "timestamp": 1656561332794,
                         "tokenid": "TWV0YVBhbmFjZWEgIzAtMDE="
                     },
-                    {
-                        "_id": "635356c510706edbb0992371",
-                        "amount": "1",
-                        "asset": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
-                        "auctionAmount": "100000000",
-                        "auctionAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
-                        "auctionType": 1,
-                        "auctor": "0xf0a33d62f32528c25e68951286f238ad24e30032",
-                        "bidAmount": "0",
-                        "bidder": null,
-                        "buyNowAmount": 0,
-                        "buyNowAsset": 0,
-                        "currentBidAmount": 0,
-                        "currentBidAsset": 0,
-                        "deadline": 1659467896089,
-                        "image": "https://img.megaoasis.io/testnet/images/0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56/https:http.fs.neo.orgGD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKrDTy3nj1wba3Nps8tQDjntKEVbNQjtsGB6DsLLZhfYZJc",
-                        "lastSoldAmount": 0,
-                        "lastSoldAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
-                        "market": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
-                        "offerAmount": 0,
-                        "offerAsset": 0,
-                        "owner": "0xf0a33d62f32528c25e68951286f238ad24e30032",
-                        "state": "notlist",
-                        "thumbnail": "https://img.megaoasis.io/testnet/thumbnail/0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56/https:http.fs.neo.orgGD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKr7aBxMeMW97DT6xXk19AK2AsbgS97W8mcMCvryMq7gRYq",
-                        "timestamp": 1659381496089,
-                        "tokenid": "TWV0YVBhbmFjZWEgIzE5LTAx"
-                    },
-                    {
-                        "_id": "6353552e10706edbb098f7ba",
-                        "amount": "1",
-                        "asset": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
-                        "auctionAmount": "200000000",
-                        "auctionAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
-                        "auctionType": 1,
-                        "auctor": "0xf0a33d62f32528c25e68951286f238ad24e30032",
-                        "bidAmount": "0",
-                        "bidder": null,
-                        "buyNowAmount": 0,
-                        "buyNowAsset": 0,
-                        "currentBidAmount": 0,
-                        "currentBidAsset": 0,
-                        "deadline": 1661138196371,
-                        "image": "https://img.megaoasis.io/testnet/images/0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56/https:http.fs.neo.orgGD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKrDTy3nj1wba3Nps8tQDjntKEVbNQjtsGB6DsLLZhfYZJc",
-                        "lastSoldAmount": 0,
-                        "lastSoldAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
-                        "market": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
-                        "offerAmount": 0,
-                        "offerAsset": 0,
-                        "owner": "0xf0a33d62f32528c25e68951286f238ad24e30032",
-                        "state": "notlist",
-                        "thumbnail": "https://img.megaoasis.io/testnet/thumbnail/0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56/https:http.fs.neo.orgGD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKr7aBxMeMW97DT6xXk19AK2AsbgS97W8mcMCvryMq7gRYq",
-                        "timestamp": 1660706196371,
-                        "tokenid": "TWV0YVBhbmFjZWEgIzE5LTAy"
-                    }
-                ],
-                "_id": "63528eb910706edbb080f54f",
-                "decimals": 0,
-                "firsttransfertime": 1656040377045,
-                "hash": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
-                "symbol": "MetaPanacea",
-                "tokenname": "MetaPanacea",
-                "totalsupply": "43",
-                "type": "NEP11"
-            }
+                   ...
         ],
         "totalCount": 1
+    },
+    "error": null
+}
+```
+
+## 29.GetCountNFTList(ContractHash，SecondaryMarket,PrimaryMarket）
+
+根据nft列表总量
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetCountNFTList",
+  "params": { 
+      "ContractHash":"",  
+      "SecondaryMarket":"0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+      "PrimaryMarket":"0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56"
+    
+       },
+  "id": 1
+}
+```
+
+  **Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "auction": 2,
+        "sale": 3
     },
     "error": null
 }
