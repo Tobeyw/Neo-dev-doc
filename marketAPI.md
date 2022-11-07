@@ -431,29 +431,21 @@
 }
 ```
 
-## 8.GetNFTClass(AssetHash,SubClass)
+## 8.GetNFTClass(AssetHash,MarketHash)
 
 获取一级市场的分类
-
-**State:**  mint  : NFT  mint出来但未上架
-
-​            listed  : NFT  上架但未开售
-
-​           selling : NFT  售卖中
 
 **Request**
 
 ```
-{
-  "jsonrpc": "2.0",
-  "method": "GetNFTClass",
-  "params": {  
-      "AssetHash":"0xc7b11b46f97bda7a8c82793841abba120e96695b",      
-      "SubClass":[["VbdQL2cl8ngkJjITK8aNzeY07PLKiEyiXCORcgw+lfI=","sNU/EpLlV1GuiH4P0zet1rz+SlCb1/2YNucEanpVWIA="], ["79WdS6cDK2ZC74UPFlILgiZlus49WkhYo5z8XpR+ckg=","GSDIwJTkjsqbWMQG4eAkPkzCXrTv/390QciVb/B3cow="]],
-      "MarketHash":"0xf63cccfe6cfac7ee776dada552b976c74fe5b51a"  //必填      
-      },
-  "id": 1
-}
+{"jsonrpc":"2.0",
+    "method":"GetNFTClass", 
+    "params":{
+        "AssetHash":"0x6a2893f97401e2b58b757f59d71238d91339856a",
+        "MarketHash":"0xc198d687cc67e244662c3b9c1325f095f8e663b1"
+      
+    },
+    "id":1}
 ```
 
 **Response**
@@ -463,13 +455,18 @@
     "id": 1,
     "result": {
         "result": [
-            {
-                "asset": "0xc7b11b46f97bda7a8c82793841abba120e96695b",
-                "claimed": 6,  //已经卖掉的数量
-                "image": "",
-                "name": "sell-1",
-                "price": "5",   //售卖价格
-                "sellAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf"  //售卖资产
+          {
+                "asset": "0x6a2893f97401e2b58b757f59d71238d91339856a",
+                "claimed": 3,
+                "deadline": "1661396823663",
+                "image": "https://img.megaoasis.io/testnet/images/0x6a2893f97401e2b58b757f59d71238d91339856a/https:http.fs.neo.org4x66NBAPzkS6EbvH3JjcfFEGPGbc5j1cUptyNiWP5RzX4foc7eak3ahti2ix6ALxUb72xRf93pmL1u1SWvN8i1JH",
+                "name": "HASH",
+                "number": 1,
+                "price": "15144534",
+                "sellAsset": "0x85deac50febfd93988d3f391dea54e8289e43e9e",
+                "series": "THE POLE BLOCK",
+                "supply": "3",
+                "thumbnail": "https://img.megaoasis.io/testnet/thumbnail/0x6a2893f97401e2b58b757f59d71238d91339856a/https:http.fs.neo.org4x66NBAPzkS6EbvH3JjcfFEGPGbc5j1cUptyNiWP5RzXCzQhnxdebqdKm3LbaV3wHat9Umig9VgFFb5mDnN32qPs"
             },
             ....
         ],
@@ -1613,6 +1610,465 @@ State: offers
         },
        .......
     ],
+    "error": null
+}
+```
+
+## 24.SetMarketCollectionWhitelist(MarketHash,MarketHash）
+
+设置广告位白名单 
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "SetMarketCollectionWhitelist",
+  "params": {
+      "MarketHash":"0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+      "ContractHash":["0x9f344fe24c963d70f5dcf0cfdeb536dc9c0acb3a",
+                      "0x50ac1c37690cc2cfc594472833cf57505d5f46de",
+                      "0x6a2893f97401e2b58b757f59d71238d91339856a",
+                      "0xaecbad96ccc77c8b147a52e45723a6b5886454e0",
+                      "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56"
+      ]
+      },
+  "id": 1
+}
+```
+
+ **Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "msg": "Insert document done!"
+    },
+    "error": null
+}
+```
+
+## 25.SetMarketCollectionWhitelist(MarketHash,ContractHash）
+
+设置广告位白名单 
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "SetMarketCollectionWhitelist",
+  "params": {
+      "MarketHash":"0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+      "ContractHash":["0x9f344fe24c963d70f5dcf0cfdeb536dc9c0acb3a",
+                      "0x50ac1c37690cc2cfc594472833cf57505d5f46de",
+                      "0x6a2893f97401e2b58b757f59d71238d91339856a",
+                      "0xaecbad96ccc77c8b147a52e45723a6b5886454e0",
+                      "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56"
+      ]
+      },
+  "id": 1
+}
+```
+
+ **Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "msg": "Insert document done!"
+    },
+    "error": null
+}
+```
+
+## 26.GetMarketCollections(MarketHash）
+
+获取广告位NFT 列表信息
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetMarketCollections",
+  "params": {
+      "MarketHash":"0xc198d687cc67e244662c3b9c1325f095f8e663b1"     
+       },
+  "id": 1
+}
+```
+
+  **Response**
+
+```
+{
+    "id": 1,
+    "result": {
+         {
+                "NFTList": [
+                    {
+                        "_id": "6352b07ce163e43d05df236d",
+                        "amount": "1",
+                        "asset": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+                        "auctionAmount": "0",
+                        "auctionAsset": null,
+                        "auctionType": 0,
+                        "auctor": null,
+                        "bidAmount": "0",
+                        "bidder": null,
+                        "buyNowAmount": 0,
+                        "buyNowAsset": 0,
+                        "currentBidAmount": 0,
+                        "currentBidAsset": 0,
+                        "deadline": 0,
+                        "image": "https://img.megaoasis.io/testnet/images/0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56/https:http.fs.neo.orgGD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKr3TgwkYd75WcfhefoNdw4zMLn1aJY1JCRLFGsuEV1Le5r",
+                        "lastSoldAmount": 0,
+                        "lastSoldAsset": 0,
+                        "market": null,
+                        "offerAmount": 0,
+                        "offerAsset": 0,
+                        "owner": "0x58456204c30be1bb479b301046c3932712c676bc",
+                        "state": "notlist",
+                        "thumbnail": "https://img.megaoasis.io/testnet/thumbnail/0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56/https:http.fs.neo.orgGD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKrCFhEqXK7xgCNduHiJBAiAuDZfYQTrfpZRkArbSgJzn51",
+                        "timestamp": 1656561332794,
+                        "tokenid": "TWV0YVBhbmFjZWEgIzAtMDE="
+                    },
+                    ...
+                    ]
+            }
+    },
+    "error": null
+}
+```
+
+## 27.GetNFTList(SecondaryMarket，PrimaryMarket，NFTstate，Sort，Order，Skip，Limit）
+
+获取NFT列表信息（含分组）
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetNFTList",
+  "params": {   
+      "SecondaryMarket":"0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+      "PrimaryMarket":"0x6f1ef5147a00ebbb7de1cf82420485674c5c55bc",
+      "NFTstate":"sale",
+      "Sort":"timestamp",
+      "Order":-1,   
+      "Skip":0,
+      "Limit":12
+    
+       },
+  "id": 1
+}
+```
+
+  **Response**
+
+```
+{
+    "id": 1,
+    "result": {
+         {
+                "NFTList": [
+                     {
+                "_id": "6353b45510706edbb0a2b081",
+                "amount": "1",
+                "asset": "0x6a2893f97401e2b58b757f59d71238d91339856a",
+                "auctionAmount": "332200000000",
+                "auctionAsset": "0x85deac50febfd93988d3f391dea54e8289e43e9e",
+                "auctionType": 1,
+                "auctor": "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+                "bidAmount": "0",
+                "bidder": null,
+                "buyNowAmount": 332200000000,
+                "buyNowAsset": "0x85deac50febfd93988d3f391dea54e8289e43e9e",
+                "class": "R0VORSBPRiBQT0xF",
+                "currentBidAmount": 0,
+                "currentBidAsset": 0,
+                "deadline": 1668160127033,
+                "image": "https://http.fs.neo.org//4x66NBAPzkS6EbvH3JjcfFEGPGbc5j1cUptyNiWP5RzX/3pdsXkoKHrNnM5p1TPHgLCUCTSStkmatN29jiiwEiGaK",
+                "lastSoldAmount": 0,
+                "lastSoldAsset": 0,
+                "market": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+                "number": 2,
+                "offerAmount": 0,
+                "offerAsset": 0,
+                "owner": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+                "properties": {
+                    "asset": "0x6a2893f97401e2b58b757f59d71238d91339856a",
+                    "class": "R0VORSBPRiBQT0xF",
+                    "image": "https://http.fs.neo.org//4x66NBAPzkS6EbvH3JjcfFEGPGbc5j1cUptyNiWP5RzX/3pdsXkoKHrNnM5p1TPHgLCUCTSStkmatN29jiiwEiGaK",
+                    "name": "BLOCK #02",
+                    "number": 2,
+                    "series": "R0VORSBPRiBQT0xF",
+                    "supply": "NQ==",
+                    "thumbnail": "aHR0cHM6Ly9odHRwLmZzLm5lby5vcmcvLzR4NjZOQkFQemtTNkVidkgzSmpjZkZFR1BHYmM1ajFjVXB0eU5pV1A1UnpYLzk5VWZIMkMzZnh0YWpVanI0QUhCRGV6eldETGtUWVVhU3E2ZDRHeG9mQjFN",
+                    "tokenid": "QkxPQ0sgIzAy"
+                },
+                "state": "sale",
+                "thumbnail": "aHR0cHM6Ly9odHRwLmZzLm5lby5vcmcvLzR4NjZOQkFQemtTNkVidkgzSmpjZkZFR1BHYmM1ajFjVXB0eU5pV1A1UnpYLzk5VWZIMkMzZnh0YWpVanI0QUhCRGV6eldETGtUWVVhU3E2ZDRHeG9mQjFN",
+                "timestamp": 1667468927033,
+                "tokenid": "QkxPQ0sgIzAy"
+            },
+                    ...
+                    ]
+            }
+    },
+    "error": null
+}
+```
+
+## 27.GetNFTByAssetClass(Asset，Series，Limit，Skip）
+
+根据class获取分组列表   class 字段为GetNFTList  接口返回的class 字段
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetNFTByAssetClass",
+  "params": {
+      "Asset":"0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+      "Series":"U3Bpcml0",
+      "Limit":1,
+      "Skip":0  
+       },
+  "id": 1
+}
+```
+
+  **Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "_id": "6353552e10706edbb098f7ba",
+                "amount": "1",
+                "asset": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+                "auctionAmount": "200000000",
+                "auctionAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                "auctionType": 1,
+                "auctor": "0xf0a33d62f32528c25e68951286f238ad24e30032",
+                "bidAmount": "0",
+                "bidder": null,
+                "buyNowAmount": 0,
+                "buyNowAsset": 0,
+                "class": "U3Bpcml0",
+                "currentBidAmount": 0,
+                "currentBidAsset": 0,
+                "deadline": 1661138196371,
+                "image": "https://img.megaoasis.io/testnet/images/0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56/https:http.fs.neo.orgGD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKrDTy3nj1wba3Nps8tQDjntKEVbNQjtsGB6DsLLZhfYZJc",
+                "lastSoldAmount": 0,
+                "lastSoldAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                "market": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+                "name": "MetaPanacea #19",
+                "offerAmount": 0,
+                "offerAsset": 0,
+                "owner": "0xf0a33d62f32528c25e68951286f238ad24e30032",
+                "series": "U3Bpcml0",
+                "state": "notlist",
+                "supply": "Mg==",
+                "thumbnail": "https://img.megaoasis.io/testnet/thumbnail/0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56/https:http.fs.neo.orgGD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKr7aBxMeMW97DT6xXk19AK2AsbgS97W8mcMCvryMq7gRYq",
+                "timestamp": 1660706196371,
+                "tokenid": "TWV0YVBhbmFjZWEgIzE5LTAy"
+            }
+        ],
+        "totalCount": 12
+    },
+    "error": null
+}
+```
+
+## 27.GetInfoByNFT(Asset，Tokenid）
+
+
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetInfoByNFT",
+  "params": {
+      "Asset":"0x50ac1c37690cc2cfc594472833cf57505d5f46de",
+      "Tokenid":["bWluZHkubmVv"]
+      
+     
+       },
+  "id": 1
+}
+```
+
+  **Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "_id": "6357a373e163e43d05fe7706",
+                "amount": "1",
+                "asset": "0x50ac1c37690cc2cfc594472833cf57505d5f46de",
+                "auctionAmount": "100000000",
+                "auctionAsset": "0x85deac50febfd93988d3f391dea54e8289e43e9e",
+                "auctionType": 1,
+                "auctor": "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+                "bidAmount": "0",
+                "bidder": null,
+                "buyNowAmount": 0,
+                "buyNowAsset": 0,
+                "currentBidAmount": 0,
+                "currentBidAsset": 0,
+                "deadline": 1667722166576,
+                "lastSoldAmount": 0,
+                "lastSoldAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                "market": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+                "offerAmount": 0,
+                "offerAsset": 0,
+                "owner": "0x6fd49ab2f14a6bd9a060bb91fdbf29799a885a9e",
+                "state": "notlist",
+                "timestamp": 1667462966576,
+                "tokenid": "bWluZHkubmVv"
+            }
+        ],
+        "totalCount": 1
+    },
+    "error": null
+}
+```
+
+## 28.GetCollectionsByAsset(MarketHash，Assets）
+
+根据asset 获取hash信息 （艺术家）
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetCollectionsByAsset",
+  "params": {
+      "MarketHash":"0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+      "Assets":["0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56"]     
+      },
+  "id": 1
+}
+```
+
+  **Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "result": [
+            {
+                "NFTList": [
+                    {
+                        "_id": "6352b07ce163e43d05df236d",
+                        "amount": "1",
+                        "asset": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+                        "auctionAmount": "0",
+                        "auctionAsset": null,
+                        "auctionType": 0,
+                        "auctor": null,
+                        "bidAmount": "0",
+                        "bidder": null,
+                        "buyNowAmount": 0,
+                        "buyNowAsset": 0,
+                        "currentBidAmount": 0,
+                        "currentBidAsset": 0,
+                        "deadline": 0,
+                        "image": "https://img.megaoasis.io/testnet/images/0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56/https:http.fs.neo.orgGD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKr3TgwkYd75WcfhefoNdw4zMLn1aJY1JCRLFGsuEV1Le5r",
+                        "lastSoldAmount": 0,
+                        "lastSoldAsset": 0,
+                        "market": null,
+                        "offerAmount": 0,
+                        "offerAsset": 0,
+                        "owner": "0x58456204c30be1bb479b301046c3932712c676bc",
+                        "state": "notlist",
+                        "thumbnail": "https://img.megaoasis.io/testnet/thumbnail/0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56/https:http.fs.neo.orgGD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKrCFhEqXK7xgCNduHiJBAiAuDZfYQTrfpZRkArbSgJzn51",
+                        "timestamp": 1656561332794,
+                        "tokenid": "TWV0YVBhbmFjZWEgIzAtMDE="
+                    },
+                    {
+                        "_id": "635356c510706edbb0992371",
+                        "amount": "1",
+                        "asset": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+                        "auctionAmount": "100000000",
+                        "auctionAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                        "auctionType": 1,
+                        "auctor": "0xf0a33d62f32528c25e68951286f238ad24e30032",
+                        "bidAmount": "0",
+                        "bidder": null,
+                        "buyNowAmount": 0,
+                        "buyNowAsset": 0,
+                        "currentBidAmount": 0,
+                        "currentBidAsset": 0,
+                        "deadline": 1659467896089,
+                        "image": "https://img.megaoasis.io/testnet/images/0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56/https:http.fs.neo.orgGD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKrDTy3nj1wba3Nps8tQDjntKEVbNQjtsGB6DsLLZhfYZJc",
+                        "lastSoldAmount": 0,
+                        "lastSoldAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                        "market": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+                        "offerAmount": 0,
+                        "offerAsset": 0,
+                        "owner": "0xf0a33d62f32528c25e68951286f238ad24e30032",
+                        "state": "notlist",
+                        "thumbnail": "https://img.megaoasis.io/testnet/thumbnail/0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56/https:http.fs.neo.orgGD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKr7aBxMeMW97DT6xXk19AK2AsbgS97W8mcMCvryMq7gRYq",
+                        "timestamp": 1659381496089,
+                        "tokenid": "TWV0YVBhbmFjZWEgIzE5LTAx"
+                    },
+                    {
+                        "_id": "6353552e10706edbb098f7ba",
+                        "amount": "1",
+                        "asset": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+                        "auctionAmount": "200000000",
+                        "auctionAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                        "auctionType": 1,
+                        "auctor": "0xf0a33d62f32528c25e68951286f238ad24e30032",
+                        "bidAmount": "0",
+                        "bidder": null,
+                        "buyNowAmount": 0,
+                        "buyNowAsset": 0,
+                        "currentBidAmount": 0,
+                        "currentBidAsset": 0,
+                        "deadline": 1661138196371,
+                        "image": "https://img.megaoasis.io/testnet/images/0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56/https:http.fs.neo.orgGD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKrDTy3nj1wba3Nps8tQDjntKEVbNQjtsGB6DsLLZhfYZJc",
+                        "lastSoldAmount": 0,
+                        "lastSoldAsset": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+                        "market": "0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+                        "offerAmount": 0,
+                        "offerAsset": 0,
+                        "owner": "0xf0a33d62f32528c25e68951286f238ad24e30032",
+                        "state": "notlist",
+                        "thumbnail": "https://img.megaoasis.io/testnet/thumbnail/0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56/https:http.fs.neo.orgGD5YUdHWFQfSVmSzgZ55y9akuqHQ8oXVhXnArtv1fLKr7aBxMeMW97DT6xXk19AK2AsbgS97W8mcMCvryMq7gRYq",
+                        "timestamp": 1660706196371,
+                        "tokenid": "TWV0YVBhbmFjZWEgIzE5LTAy"
+                    }
+                ],
+                "_id": "63528eb910706edbb080f54f",
+                "decimals": 0,
+                "firsttransfertime": 1656040377045,
+                "hash": "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56",
+                "symbol": "MetaPanacea",
+                "tokenname": "MetaPanacea",
+                "totalsupply": "43",
+                "type": "NEP11"
+            }
+        ],
+        "totalCount": 1
+    },
     "error": null
 }
 ```
