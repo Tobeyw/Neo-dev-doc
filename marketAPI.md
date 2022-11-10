@@ -443,7 +443,7 @@
     "params":{
         "AssetHash":"0x6a2893f97401e2b58b757f59d71238d91339856a",
         "MarketHash":"0xc198d687cc67e244662c3b9c1325f095f8e663b1"
-      
+        "NFTState" :"sale/auction"
     },
     "id":1}
 ```
@@ -459,14 +459,20 @@
                 "asset": "0x6a2893f97401e2b58b757f59d71238d91339856a",
                 "claimed": 3,
                 "deadline": "1661396823663",
-                "image": "https://img.megaoasis.io/testnet/images/0x6a2893f97401e2b58b757f59d71238d91339856a/https:http.fs.neo.org4x66NBAPzkS6EbvH3JjcfFEGPGbc5j1cUptyNiWP5RzX4foc7eak3ahti2ix6ALxUb72xRf93pmL1u1SWvN8i1JH",
+                "image": "",
                 "name": "HASH",
                 "number": 1,
-                "price": "15144534",
-                "sellAsset": "0x85deac50febfd93988d3f391dea54e8289e43e9e",
+                "currentBidAmount": "15144534",  //竞拍价格
+                "currentBidAsset": "0x85deac50febfd93988d3f391dea54e8289e43e9e", //竞拍token
+                "auctionAmount": "15144534",                //起拍价格/直买直卖价格
+                "auctionAsset": "0x85deac50febfd93988d3f391dea54e8289e43e9e",    //起拍token/直买直卖token
                 "series": "THE POLE BLOCK",
                 "supply": "3",
-                "thumbnail": "https://img.megaoasis.io/testnet/thumbnail/0x6a2893f97401e2b58b757f59d71238d91339856a/https:http.fs.neo.org4x66NBAPzkS6EbvH3JjcfFEGPGbc5j1cUptyNiWP5RzXCzQhnxdebqdKm3LbaV3wHat9Umig9VgFFb5mDnN32qPs"
+                "thumbnail": "",
+                "auctionType":"0/1",   //0 直买直卖  1 竞拍 
+                "video" :"",
+                "count":"",
+                
             },
             ....
         ],
