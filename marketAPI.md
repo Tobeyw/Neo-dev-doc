@@ -2049,3 +2049,68 @@ State: offers
 }
 ```
 
+## 30.SetPrimaryMarketPreSaleWhitelist(MarketHash，Address）
+
+设置一级市场预售白名单
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "SetPrimaryMarketPreSaleWhitelist",
+  "params": {
+      "MarketHash":"0xc198d687cc67e244662c3b9c1325f095f8e663b1",
+      "Address":["0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56"]
+     
+       },
+  "id": 1
+}
+```
+
+  **Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "msg": "Insert document done!"
+    },
+    "error": null
+}
+```
+
+## 31.GetPrimaryMarketPreSaleWhitelist(MarketHash）
+
+获取一级市场预售白名单
+
+**Request**
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "GetPrimaryMarketPreSaleWhitelist",
+  "params": {
+      "MarketHash":"0xc198d687cc67e244662c3b9c1325f095f8e663b1"      
+     
+       },
+  "id": 1
+}
+```
+
+  **Response**
+
+```
+{
+    "id": 1,
+    "result": {
+        "PreSaleWhitelist": [
+            "0x4fb2f93b37ff47c0c5d14cfc52087e3ca338bc56"
+        ],
+        "_id": "637b18d5e9cedd7c8b5ed968",
+        "market": "0xc198d687cc67e244662c3b9c1325f095f8e663b1"
+    },
+    "error": null
+}
+```
+
