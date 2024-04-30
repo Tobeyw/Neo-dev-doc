@@ -5,6 +5,7 @@
 The Neo N3 contracts are deployed at:
 
 **Management contract** : 0xec849454c36f5fb13d0d98d789c57e72426b8cc2 
+
 **Bridge contract** : 0xeda1b81392438670d35e91c1d46737152d477799 
 
 | Role           | Public Key                                                   |
