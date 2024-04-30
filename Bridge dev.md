@@ -34,7 +34,7 @@ The Neo X bridge contracts are deployed at:
 
 **BridgeManagementProxy:** `0x1212000000000000000000000000000000000005` 
 
-**BridgeManagementImplementation:** `0x1212100000000000000000000000000000000004`
+**BridgeManagementImplementation:** `0x1212100000000000000000000000000000000005`
 
 | Role           | Adress                                     |
 | -------------- | ------------------------------------------ |
